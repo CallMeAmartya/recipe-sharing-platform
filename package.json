@@ -1,0 +1,32 @@
+{
+  "name": "recipe-sharing-platform",
+  "version": "1.0.0",
+  "description": "A platform for sharing and discovering recipes.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CallMeAmartya/recipe-sharing-platform.git"
+  },
+  "keywords": [
+    "recipe",
+    "sharing",
+    "platform",
+    "MERN"
+  ],
+  "author": "Amartya <amartyasen00077@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CallMeAmartya/recipe-sharing-platform/issues"
+  },
+  "homepage": "https://github.com/CallMeAmartya/recipe-sharing-platform#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.1.0"
+  }
+}
