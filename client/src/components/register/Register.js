@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { registerUser } from "../../api/api";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -19,27 +19,19 @@ const Register = () => {
       return;
     }
 
-    const registerData = {
+    const userData = {
       name,
       email,
       password,
     };
-    verifyEmail(registerData);
     try {
-      const response = await fetch("api/users/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(registerData),
-      });
+      const response = await registerUser(userData);
+      console.log(response);
 
-      const data = await response.json();
-
-      if (response.ok) {
+      if (response.message !== null) {
         navigate("/");
       } else {
-        setError(data.message);
+        setError(response.error);
       }
     } catch (e) {
       console.error(e);
