@@ -20,4 +20,8 @@ const userSchema = new mongoose.Schema({
   },
 });
 
+userSchema.methods.comparePassword = async function (candidatePassword, next) {
+  return candidatePassword === this.password;
+};
+
 module.exports = User = mongoose.model("user", userSchema);
